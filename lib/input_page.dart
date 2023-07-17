@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+const bottonContainerHeight = 80.0;
+const activeCardColour = Color(0XFF1D1E33);
+const bottomContainerColour = Color(0xFFEB1555);
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
@@ -19,19 +22,19 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: ReusableWidget(
-                    Colors: Color(0XFF1D1E33),
+                    Colors: activeCardColour,
                   ),
                 ),
                 Expanded(
                  child: ReusableWidget(
-                  Colors: Color(0XFF1D1E33),
+                  Colors: activeCardColour,
                  ),
                 ),
               ],
             )),
             Expanded(
              child: ReusableWidget(
-              Colors: Color(0XFF1D1E33),
+              Colors: activeCardColour,
              ),
             ),
             Expanded(
@@ -39,23 +42,23 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: ReusableWidget(
-                    Colors: Color(0XFF1D1E33),
+                    Colors: activeCardColour,
                   ),
                 ),
                 Expanded(
                   child: ReusableWidget(
-                    Colors: Color(0XFF1D1E33),
+                    Colors: activeCardColour,
                   ),
                 ),
               ],
             )),
             Container(
-              child: Text('Calculate'),
-              color: Color(0xFFEB1555),
+              child: Center(child: Text('Calculate')),
+              color: bottomContainerColour,
               margin: EdgeInsets.only(top: 10.0),
-              height: 10.0,
-              width: 50.0,
-              padding:EdgeInsets.all(2),
+              height: bottonContainerHeight,
+              width: double.infinity,
+              
             )
           ],
         ));
