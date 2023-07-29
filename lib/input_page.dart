@@ -21,33 +21,36 @@ class _InputPageState extends State<InputPage> {
                 child: Row(
               children: <Widget>[
                 Expanded(
-                  child: ReusableWidget(
-                    Colors: activeCardColour,
+                  child: ReusableCard(
+                    colour: activeCardColour,
+                    cardChild: Column(
+                      
+                  ),
                   ),
                 ),
                 Expanded(
-                 child: ReusableWidget(
-                  Colors: activeCardColour,
+                 child: ReusableCard(
+                  colour: activeCardColour,
                  ),
                 ),
               ],
             )),
             Expanded(
-             child: ReusableWidget(
-              Colors: activeCardColour,
+             child: ReusableCard(
+              colour: activeCardColour,
              ),
             ),
             Expanded(
                 child: Row(
               children: <Widget>[
                 Expanded(
-                  child: ReusableWidget(
-                    Colors: activeCardColour,
+                  child: ReusableCard(
+                    colour: activeCardColour,
                   ),
                 ),
                 Expanded(
-                  child: ReusableWidget(
-                    Colors: activeCardColour,
+                  child: ReusableCard(
+                    colour: activeCardColour,
                   ),
                 ),
               ],
@@ -65,16 +68,17 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
-class ReusableWidget extends StatelessWidget {
-  ReusableWidget({@required this.Colors});
-  final Color Colors;
-
+class ReusableCard extends StatelessWidget {
+  ReusableCard({@required this.colour, this.cardChild});
+  final Color colour;
+  final Widget cardChild;
   @override
   Widget build(BuildContext context) {
     return Container(
+      child: cardChild,
       margin: EdgeInsets.all(15),
       decoration: BoxDecoration(
-        color: Colors,
+        color: colour,
         borderRadius: BorderRadius.circular(5),
       ),
       height: 200,
