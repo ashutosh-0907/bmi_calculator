@@ -4,8 +4,6 @@ import 'icon_content.dart';
 import 'reusable_card.dart';
 import 'constants.dart';
 
-
-
 enum Gender { male, female }
 
 class InputPage extends StatefulWidget {
@@ -23,13 +21,14 @@ class _InputPageState extends State<InputPage> {
           title: Center(child: Text('BMI CALCULATOR')),
         ),
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Expanded(
               child: Row(
                 children: <Widget>[
                   Expanded(
                     child: ReusableCard(
-                      onPress: (){
+                      onPress: () {
                         setState(() {
                           selectedGender = Gender.male;
                         });
@@ -45,7 +44,7 @@ class _InputPageState extends State<InputPage> {
                   ),
                   Expanded(
                     child: ReusableCard(
-                      onPress: (){
+                      onPress: () {
                         setState(() {
                           selectedGender = Gender.female;
                         });
@@ -65,6 +64,26 @@ class _InputPageState extends State<InputPage> {
             Expanded(
               child: ReusableCard(
                 colour: kactiveCardColour,
+                cardChild: Column(
+                  children: <Widget>[
+                    Text(
+                      'HEIGHT', 
+                    style: klabelTextStyle
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Text(
+                          '180', 
+                          style: kNumberTextStyle
+                          ),
+                          Text(
+                            'cm',
+                            style: klabelTextStyle,
+                          )
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
             Expanded(
