@@ -14,8 +14,6 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  @override
-  Widget build(BuildContext context) {
     Color maleCardColour = inactiveCardColour;
     Color femaleCardColour = inactiveCardColour;
 
@@ -35,6 +33,8 @@ class _InputPageState extends State<InputPage> {
         }
       }
     }
+  @override
+  Widget build(BuildContext context) {
 
     return Scaffold(
         appBar: AppBar(
@@ -53,7 +53,7 @@ class _InputPageState extends State<InputPage> {
                         });
                       },
                       child: ReusableCard(
-                        colour: activeCardColour,
+                        colour: maleCardColour,
                         cardChild: IconContent(
                           icon: FontAwesomeIcons.mars,
                           label: 'MALE',
@@ -69,7 +69,7 @@ class _InputPageState extends State<InputPage> {
                         });
                       },
                       child: ReusableCard(
-                        colour: activeCardColour,
+                        colour: femaleCardColour,
                         cardChild: IconContent(
                           icon: FontAwesomeIcons.venus,
                           label: 'FEMALE',
