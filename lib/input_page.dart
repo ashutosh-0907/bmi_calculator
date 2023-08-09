@@ -5,6 +5,7 @@ import 'reusable_card.dart';
 
 const bottonContainerHeight = 80.0;
 const activeCardColour = Color(0XFF1D1E33);
+const inactiveCardColour = Color(0xFF111328);
 const bottomContainerColour = Color(0xFFEB1555);
 
 class InputPage extends StatefulWidget {
@@ -15,6 +16,26 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   @override
   Widget build(BuildContext context) {
+    Color maleCardColour = inactiveCardColour;
+    Color femaleCardColour = inactiveCardColour;
+
+    void updateColour(int gender) {
+      if (gender == 1) {
+        if (maleCardColour == inactiveCardColour) {
+          maleCardColour = activeCardColour;
+        } else {
+          maleCardColour = inactiveCardColour;
+        }
+      }
+      if (gender == 2) {
+        if (femaleCardColour == inactiveCardColour) {
+          femaleCardColour = activeCardColour;
+        } else {
+          femaleCardColour = inactiveCardColour;
+        }
+      }
+    }
+
     return Scaffold(
         appBar: AppBar(
           title: Center(child: Text('BMI CALCULATOR')),
@@ -22,28 +43,42 @@ class _InputPageState extends State<InputPage> {
         body: Column(
           children: <Widget>[
             Expanded(
-                child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: ReusableCard(
-                    colour: activeCardColour,
-                    cardChild: IconContent(
-                      icon: FontAwesomeIcons.mars,
-                      label: 'MALE',
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          updateColour(1);
+                        });
+                      },
+                      child: ReusableCard(
+                        colour: activeCardColour,
+                        cardChild: IconContent(
+                          icon: FontAwesomeIcons.mars,
+                          label: 'MALE',
+                        ),
+                      ),
                     ),
                   ),
-                ),
-                Expanded(
-                  child: ReusableCard(
-                    colour: activeCardColour,
-                    cardChild: IconContent(
-                      icon: FontAwesomeIcons.venus,
-                      label: 'FEMALE',
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          updateColour(2);
+                        });
+                      },
+                      child: ReusableCard(
+                        colour: activeCardColour,
+                        cardChild: IconContent(
+                          icon: FontAwesomeIcons.venus,
+                          label: 'FEMALE',
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
+                ],
+              ),
             ),
             Expanded(
               child: ReusableCard(
