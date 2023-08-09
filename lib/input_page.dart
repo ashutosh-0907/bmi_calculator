@@ -35,8 +35,8 @@ class _InputPageState extends State<InputPage> {
                         });
                       },
                       colour: selectedGender == Gender.male
-                          ? activeCardColour
-                          : inactiveCardColour,
+                          ? kactiveCardColour
+                          : kinactiveCardColour,
                       cardChild: IconContent(
                         icon: FontAwesomeIcons.mars,
                         label: 'MALE',
@@ -51,8 +51,8 @@ class _InputPageState extends State<InputPage> {
                         });
                       },
                       colour: selectedGender == Gender.female
-                          ? activeCardColour
-                          : inactiveCardColour,
+                          ? kactiveCardColour
+                          : kinactiveCardColour,
                       cardChild: IconContent(
                         icon: FontAwesomeIcons.venus,
                         label: 'FEMALE',
@@ -64,7 +64,7 @@ class _InputPageState extends State<InputPage> {
             ),
             Expanded(
               child: ReusableCard(
-                colour: activeCardColour,
+                colour: kactiveCardColour,
               ),
             ),
             Expanded(
@@ -72,21 +72,21 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: ReusableCard(
-                    colour: activeCardColour,
+                    colour: kactiveCardColour,
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
-                    colour: activeCardColour,
+                    colour: kactiveCardColour,
                   ),
                 ),
               ],
             )),
             Container(
               child: Center(child: Text('Calculate')),
-              color: bottomContainerColour,
+              color: kbottomContainerColour,
               margin: EdgeInsets.only(top: 10.0),
-              height: bottonContainerHeight,
+              height: kbottonContainerHeight,
               width: double.infinity,
             )
           ],
