@@ -65,22 +65,40 @@ class _InputPageState extends State<InputPage> {
               child: ReusableCard(
                 colour: kactiveCardColour,
                 cardChild: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text(
-                      'HEIGHT', 
-                    style: klabelTextStyle
-                    ),
+                    Text('HEIGHT', style: klabelTextStyle),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.alphabetic,
                       children: <Widget>[
+                        Text(height.toString(), style: kNumberTextStyle),
                         Text(
-                          '180', 
-                          style: kNumberTextStyle
-                          ),
-                          Text(
-                            'cm',
-                            style: klabelTextStyle,
-                          )
+                          'cm',
+                          style: klabelTextStyle,
+                        )
                       ],
+                    ),
+                    SliderTheme(
+                      data: SliderTheme.of(context).copyWith(
+                          inactiveTrackColor: Color(0xFF8D8E98),
+                          activeTrackColor: Colors.white,
+                          thumbColor: Color(0xFFEB1555),
+                          overlayColor: Color(0x29EB1555),
+                          thumbShape:
+                              RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                          overlayShape:
+                              RoundSliderOverlayShape(overlayRadius: 30.0)),
+                      child: Slider(
+                          value: height.toDouble(),
+                          min: 120.0,
+                          max: 230.0,
+                          onChanged: (double newValue) {
+                            setState(() {
+                              height = newValue.round();
+                            });
+                          }),
                     )
                   ],
                 ),
@@ -102,7 +120,11 @@ class _InputPageState extends State<InputPage> {
               ],
             )),
             Container(
-              child: Center(child: Text('Calculate')),
+              child: Center(
+                  child: Text(
+                'Calculate',
+                style: kNumberTextStyle,
+              )),
               color: kbottomContainerColour,
               margin: EdgeInsets.only(top: 10.0),
               height: kbottonContainerHeight,
