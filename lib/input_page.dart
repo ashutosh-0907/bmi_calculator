@@ -34,8 +34,8 @@ class _InputPageState extends State<InputPage> {
                         });
                       },
                       colour: selectedGender == Gender.male
-                          ? kactiveCardColour
-                          : kinactiveCardColour,
+                          ? kActiveCardColour
+                          : kInactiveCardColour,
                       cardChild: IconContent(
                         icon: FontAwesomeIcons.mars,
                         label: 'MALE',
@@ -50,8 +50,8 @@ class _InputPageState extends State<InputPage> {
                         });
                       },
                       colour: selectedGender == Gender.female
-                          ? kactiveCardColour
-                          : kinactiveCardColour,
+                          ? kActiveCardColour
+                          : kInactiveCardColour,
                       cardChild: IconContent(
                         icon: FontAwesomeIcons.venus,
                         label: 'FEMALE',
@@ -63,7 +63,7 @@ class _InputPageState extends State<InputPage> {
             ),
             Expanded(
               child: ReusableCard(
-                colour: kactiveCardColour,
+                colour: kActiveCardColour,
                 cardChild: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -109,7 +109,7 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: ReusableCard(
-                    colour: kactiveCardColour,
+                    colour: kActiveCardColour,
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -151,7 +151,7 @@ class _InputPageState extends State<InputPage> {
                 ),
                 Expanded(
                   child: ReusableCard(
-                    colour: kactiveCardColour,
+                    colour: kActiveCardColour,
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -201,13 +201,13 @@ class _InputPageState extends State<InputPage> {
                 child: Center(
                     child: Text(
                   'Calculate',
-                  style: kNumberTextStyle,
+                  style: kLargeTextStyle,
                 ),
                 ),
                 
-                color: kbottomContainerColour,
+                color: kBottomContainerColour,
                 margin: EdgeInsets.only(top: 10.0),
-                height: kbottonContainerHeight,
+                height: kBottonContainerHeight,
                 width: double.infinity,
               ),
             )
