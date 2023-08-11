@@ -18,7 +18,7 @@ class Calculatio {
       return 'Overweight';
     } else if (_bmi < 18) {
       return 'Underweight';
-    } else if (_bmi < 25 && _bmi > 18) {
+    } else{
       return 'Noraml';
     }
   }
@@ -28,8 +28,8 @@ class Calculatio {
       return 'Your have heigher than normal body weight! Try to exercise';
     } else if (_bmi < 18) {
       return 'Your BMI is quite low, you should eat more!';
-    } else if (_bmi < 25 && _bmi > 18) {
+    } else{
       return 'You have a normal body weight';
-    }
+    } 
   }
 }
