@@ -1,6 +1,7 @@
 import 'package:bmi_calculator/reusable_card.dart';
 import 'package:flutter/material.dart';
 import 'constants.dart';
+import 'calculation.dart';
 import 'input_page.dart';
 
 class ResulltsPage extends StatelessWidget {
@@ -45,15 +46,15 @@ class ResulltsPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'resultText',
+                    resultText.toUpperCase(),
                     style: kResultTextStyle,
                   ),
                   Text(
-                    'bmiResult',
+                    bmiResult,
                     style: kBMITextStyle,
                   ),
                   Text(
-                    'interpretation',
+                    interpretation,
                     textAlign: TextAlign.center,
                     style: kBodyTextStyle,
                   )
